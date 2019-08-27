@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	   xmlns:tx="http://www.springframework.org/schema/tx"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   		http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+			http://www.springframework.org/schema/context/spring-context-4.3.xsd
+			http://www.springframework.org/schema/data/jpa 
+			http://www.springframework.org/schema/data/jpa/spring-jpa-1.8.xsd
+			http://www.springframework.org/schema/tx 
+			http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+
+	<!-- Autoescaneo de los beans de la capa de servicio -->
+	<context:component-scan
+		base-package="com.arcones.Service" />
+
+	<!-- JPA -->
+
+<!-- 	<jpa:repositories -->
+<!-- 		base-package="com.arcones.Repository" /> -->
+
+	<!-- Interfaz con todos metodos necesarios para obtener conexion con BBDD -->
+<!-- 	<bean id="dataSource" -->
+<!-- 		class="org.springframework.jdbc.datasource.DriverManagerDataSource"> -->
+<!-- 		<property name="driverClassName" -->
+<!-- 			value="com.mysql.jdbc.Driver" /> -->
+<!-- 		<property name="url" -->
+<!-- 			value="jdbc:mysql://localhost:3306/cineapp?useSSL=false" /> -->
+<!-- 		<property name="username" value="root" /> -->
+<!-- 		<property name="password" value="admin" /> -->
+<!-- 	</bean> -->
+
+	<!-- Permite establecer una configuracion predefinida de jpa, en este caso 
+		se implementa Hybernate -->
+<!-- 	<bean id="jpaVendorAdapter" -->
+<!-- 		class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"> -->
+		<!-- Genera codigo sql para generar tablas de BBDD de forma automatica, 
+			en este caso no por que ya me da el tio el codigo -->
+<!-- 		<property name="generateDdl" value="false" /> -->
+		<!-- Ver sentencias sql en consola que se realicen a la bbdd -->
+<!-- 		<property name="showSql" value="true"></property> -->
+		<!-- Indicar tipo de bbdd con la que se va a trabajar -->
+<!-- 		<property name="databasePlatform" -->
+<!-- 			value="org.hibernate.dialect.MySQL5Dialect" /> -->
+<!-- 	</bean> -->
+
+	<!-- Permite gestionar las entidades para almacenarlas en bbdd -->
+<!-- 	<bean id="entityManagerFactory" -->
+<!-- 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"> -->
+		<!-- Donde estan los beans -->
+<!-- 		<property name="packagesToScan" -->
+<!-- 			value="com.arcones.Models" /> -->
+<!-- 		<property name="dataSource" ref="dataSource" /> -->
+<!-- 		<property name="jpaVendorAdapter" ref="jpaVendorAdapter" /> -->
+<!-- 	</bean> -->
+
+	<!-- Permite hacer metodos de manejo de BBDD transaccionales -->
+<!-- 	<bean id="transactionManager" -->
+<!-- 		class="org.springframework.orm.jpa.JpaTransactionManager"> -->
+<!-- 		<property name="entityManagerFactory" -->
+<!-- 			ref="entityManagerFactory" /> -->
+<!-- 	</bean> -->
+
+</beans>
